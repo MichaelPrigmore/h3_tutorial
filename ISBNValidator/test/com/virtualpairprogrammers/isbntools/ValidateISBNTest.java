@@ -19,8 +19,8 @@ public class ValidateISBNTest
 	public void check_an_invalid_ISBN()
 	{
 		ValidateISBN validator = new ValidateISBN();
-		boolean result = validator.checkISBN(140449116);
-		assertTrue(result);
+		boolean result = validator.checkISBN(140449117);
+		assertFalse(result);
 	}
 
 }
