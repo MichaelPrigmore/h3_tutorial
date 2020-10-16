@@ -4,11 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ValidateISBNTest {
+public class ValidateISBNTest
+{
 
 	@Test
-	public void check_a_valid_ISBN() {
-		fail();
+	public void check_a_valid_ISBN()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN(140449116);
+		assertTrue(result);
 	}
 
 }
