@@ -8,7 +8,7 @@ public class ValidateISBNTest
 {
 
 	@Test
-	public void check_a_valid_ISBN()
+	public void check_a_valid_ISBN_with_10_digits()
 	{
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449116");
@@ -18,7 +18,7 @@ public class ValidateISBNTest
 	}
 
 	@Test
-	public void ISBN_numbers_ending_in_an_x_are_valid()
+	public void ten_digit_ISBN_numbers_ending_in_an_x_are_valid()
 	{
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("012000030X");
@@ -26,7 +26,17 @@ public class ValidateISBNTest
 	}
 
 	@Test
-	public void check_an_invalid_ISBN()
+	public void check_a_valid_ISBN_with_13_digits()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("9780547928210");
+		assertTrue("first value", result);
+		result = validator.checkISBN("9781853267338");
+		assertTrue("second value", result);
+	}
+
+	@Test
+	public void check_an_invalid_10_digit_ISBN()
 	{
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449117");
