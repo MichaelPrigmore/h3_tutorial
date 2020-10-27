@@ -12,6 +12,9 @@ public class ValidateISBN
 
 		for (int i = 0; i < 10; i++)
 		{
+			if (!(Character.isDigit(isbn.charAt(i))))
+				throw new NumberFormatException("ISBN must contain numbers only");
+
 			total += isbn.charAt(i) * (10 - i);
 		}
 

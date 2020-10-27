@@ -32,4 +32,11 @@ public class ValidateISBNTest
 		validator.checkISBN("123456789");
 	}
 
+	@Test(expected = NumberFormatException.class)
+	public void only_use_numbers()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("helloworld");
+	}
+
 }
