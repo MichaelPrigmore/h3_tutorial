@@ -43,6 +43,14 @@ public class ValidateISBNTest
 		assertFalse(result);
 	}
 
+	@Test
+	public void check_an_invalid_13_digit_ISBN()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("9781853267337");
+		assertFalse(result);
+	}
+
 	@Test(expected = NumberFormatException.class)
 	public void nine_digit_ISBN_are_not_allowed()
 	{
