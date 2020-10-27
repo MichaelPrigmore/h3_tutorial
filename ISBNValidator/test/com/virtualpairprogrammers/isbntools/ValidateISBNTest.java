@@ -18,6 +18,14 @@ public class ValidateISBNTest
 	}
 
 	@Test
+	public void ISBN_numbers_ending_in_an_x_are_valid()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("012000030X");
+		assertTrue(result);
+	}
+
+	@Test
 	public void check_an_invalid_ISBN()
 	{
 		ValidateISBN validator = new ValidateISBN();
